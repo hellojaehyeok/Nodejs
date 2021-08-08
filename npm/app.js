@@ -1,14 +1,9 @@
+import express from 'express';
+const app = express();
 
-// 카운트 코드
-// import { increaseCount, getCount } from './count.js';
-
-// increaseCount();
-// increaseCount();
-// increaseCount();
-// console.log(getCount());
-
-const os = require("os");
-const path = require("path");
-console.log(os.EOL === '\r\n');
-
-console.log(path.sep);
+app.get("/test/:id", ( req, res, nex) => {
+    console.log(req.params) // :id 에 속하는 부분
+    console.log(req.query) // 
+    res.send("hello")
+});
+app.listen(8080);

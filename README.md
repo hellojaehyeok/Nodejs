@@ -16,6 +16,12 @@ Node.js 정리
     npm un --라이브러리이름--
     npm uninstall --라이브러리이름--
 
+## type module
+package.json
+
+    "type": "module",
+
+
 ## nodemon
 파일이 변경되면 자동으로 재시작한다.          
 개발할 때만 필요하기 때문에 --save-dev를 뒤에 붙인다.          
