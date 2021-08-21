@@ -104,3 +104,61 @@ mkdir(파일경로) -> 해당 경로에 파일을 만든다.
 readdir(파일경로) -> 경로에 있는 파일들을 읽어온다.          
           
 
+
+## express
+express 설치
+
+    npm i express
+
+express 시작
+
+    // express import
+    import express from 'express';
+    const app = express();
+
+    // get method
+    app.get("/test/:id", ( req, res, next) => {
+        // http://localhost:8080/test/hi?keyword=song
+        // { id: 'hi' }
+        console.log(req.params) 
+        // { keyword: 'song' }
+        console.log(req.query) 
+
+        // 클라이언트에게 정보를 보낸다.
+        res.send("hello")
+    });
+    
+    // 8080포트로 서버를 실행한다.
+    app.listen(8080);
+
+
+
+## cors
+cors에러 -> 서버에서 허용하지 않은 도메인에서 서버통신을 하려할때 나타난다.             
+cors에러를 해결하기 위하여 cors를 다운받는다.            
+
+    npm i cors
+
+그후 아래 코드를 app.js에 사용한다.
+
+    import cors from 'cors';
+
+    app.use(cors({
+        orgin: ['도메인 주소'],
+        
+    }));
+
+## cookie-parser  
+body를 보려면 express.json()를 써야 하듯이            
+쿠키를 보려면 cookie-parser를 사용하여야 한다.            
+
+    npm i cookie-parser
+
+    app.use(cookieParser);
+    
+## helmet
+보안 설정
+
+    npm i helmet
+
+    app.use(helmet());
